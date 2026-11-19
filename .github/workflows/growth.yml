@@ -1,0 +1,81 @@
+name: growth
+# The head of growth: search research and cross-venture links, Mon, Wed and Fri 8pm Pacific.
+# Started by the venture-cron Worker (browsertools-oss/subfixer, cron/schedule.json "jobs").
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+  actions: read
+concurrency: hq-growth
+jobs:
+  growth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check out every venture
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p ../portfolio
+          for r in $(gh repo list browsertools-oss --topic side-venture --limit 100 --json name --jq '.[].name'); do
+            [ "$r" = "hq" ] && continue
+            git clone -q "https://github.com/browsertools-oss/$r.git" "../portfolio/$r"
+            git -C "../portfolio/$r" config user.name "hq-growth"
+            git -C "../portfolio/$r" config user.email "hq-growth@users.noreply.github.com"
+          done
+          ls ../portfolio
+      - name: Load the instructions
+        id: prompt
+        run: |
+          TODAY=$(TZ=America/Los_Angeles date +%m-%d-%Y)
+          { echo 'text<<PROMPT_EOF'; sed -e "s/{{TODAY}}/${TODAY}/g" .github/agent/growth.md; echo 'PROMPT_EOF'; } >> "$GITHUB_OUTPUT"
+          git config user.name "hq-growth"
+          git config user.email "hq-growth@users.noreply.github.com"
+      - uses: anthropics/claude-code-action@v1
+        with:
+          # Owner's Claude subscription, from `claude setup-token`.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: ${{ steps.prompt.outputs.text }}
+          github_token: ${{ github.token }}
+          show_full_output: true
+          claude_args: >-
+            --model ${{ vars.GROWTH_MODEL || 'claude-opus-5-5' }}
+            --max-turns 250
+            --add-dir ../portfolio
+            --allowedTools "Bash(date*),Bash(ls*),Bash(cd *),Bash(git log*),Bash(git show*),Bash(git diff*),Bash(git status*),Bash(git add *),Bash(git commit *),Bash(git -C *),Bash(gh issue list*),Bash(gh issue view*),Bash(gh run list*),Bash(gh run view*),Bash(gh repo list*),Bash(gh repo view*),Read,Edit,Write,Glob,Grep,WebSearch,WebFetch"
+      - name: Push venture changes that still pass their tests
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_GH_TOKEN }}
+        run: |
+          gh auth setup-git
+          for d in ../portfolio/*/; do
+            n=$(basename "$d")
+            ahead=$(git -C "$d" rev-list --count origin/main..HEAD 2>/dev/null || echo 0)
+            [ "$ahead" = "0" ] && continue
+            code=$(git -C "$d" diff --name-only origin/main..HEAD | grep -v '^ops/' | grep -v '\.md$' || true)
+            if [ -n "$code" ]; then
+              if ! (cd "$d" && npm ci --silent && npm test && npm run build); then
+                echo "- $(date -u +%F) $n: CEO code change failed tests or build, not pushed" >> ops/actions-done.md
+                continue
+              fi
+            fi
+            git -C "$d" pull --rebase -q && git -C "$d" push -q \
+              && echo "pushed $n ($ahead commits)" \
+              || echo "- $(date -u +%F) $n: push failed" >> ops/actions-done.md
+          done
+      - name: Push headquarters
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_GH_TOKEN }}
+        run: |
+          gh auth setup-git
+                    git pull --rebase -q || true
+          git push -q

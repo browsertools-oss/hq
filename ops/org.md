@@ -1,10 +1,12 @@
 # Chain of command
 
-1. CEO (Opus, nightly 10pm Pacific, here in hq): company direction, new ventures, new money streams, each venture's goal and worker budget (ops/ceo-notes.md in each venture), approves hires.
-2. Boss, one per venture (Opus): writes the week plan every Sunday 4am Pacific and on a CEO replan, answers workers' questions during runs, checks the runs, requests hires.
-3. Workers (free models): the daily crew at 6am and 6pm Pacific, plus hired workers with one job each in ops/roles/<role>.md.
+1. CEO (Opus, nightly 10pm Pacific, here in hq): company direction, new ventures, new money streams, each venture's goal and worker budget (ops/ceo-notes.md in each venture), approves hires, orders replans.
+2. Head of growth (Opus, Mon, Wed, Fri 8pm Pacific, here in hq): search research, links between ventures, free growth channels. Reports to the CEO in ops/growth.md; briefs bosses in each venture's ops/growth-brief.md.
+3. Boss, one per venture (Opus): writes the week plan every Sunday 4am Pacific and on a CEO replan, answers workers' questions during runs, requests hires.
+4. Under each boss: foreman (Sonnet, 5am Pacific Mon to Sat) checks the workers' last day and fixes today's plan, reporting in ops/foreman-report.md; quality checker (Sonnet) reviews every deploy, blocks serious problems, files `qa` issues.
+5. Workers (free models): the daily crew at 6am and 6pm Pacific, plus hired workers with one job each in ops/roles/<role>.md.
 
-| Venture | Boss | Daily crew | Hired workers |
-| --- | --- | --- | --- |
-| subfixer | yes | 6am, 6pm | none |
-| stayfile | yes | 6am, 6pm | none |
+| Venture | Boss | Foreman | Quality checker | Daily crew | Hired workers |
+| --- | --- | --- | --- | --- | --- |
+| subfixer | yes | yes | every deploy | 6am, 6pm | none |
+| stayfile | yes | yes | every deploy | 6am, 6pm | none |
