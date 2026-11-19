@@ -1,0 +1,122 @@
+name: daily-agent
+on:
+  # Started on time by the venture-cron Worker (subfixer repo, cron/) at 6am and 6pm Pacific.
+  # GitHub's own schedule ran up to 9 hours late, so it is not used.
+  workflow_dispatch:
+    inputs:
+      run:
+        description: morning (posts the daily report), evening, or a hired worker's role from ops/roles/<role>.md
+        default: morning
+        type: string
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  checks: write
+concurrency: daily-agent
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # 10 agent minutes x 4 runs a day fits GitHub's 2,000 free private-repo minutes a month with deploys.
+    timeout-minutes: ${{ fromJSON(vars.JOB_TIMEOUT || '22') }}
+    env:
+      # Work-session length and request budget; the job timeout above must stay above the minutes.
+      AGENT_MINUTES: ${{ vars.AGENT_MINUTES || '10' }}
+      AGENT_REQUESTS: ${{ vars.AGENT_REQUESTS || '240' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Live feed for the Ventures page
+        # Keeps the "Agent live" check run updated with what the agent is doing.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: nohup node scripts/live.mjs watch > "$RUNNER_TEMP/agent-live.log" 2>&1 &
+      - name: Free model rotation
+        # scripts/model-proxy.mjs sends each request to the best free model in
+        # .github/agent/models.json that isn't rate limited, and ends the session
+        # when the time, the request budget or the day's free quota runs out.
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          nohup node scripts/model-proxy.mjs > "$RUNNER_TEMP/model-proxy.log" 2>&1 &
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8787 >/dev/null && exit 0; sleep 0.5; done
+          echo "model proxy did not start"; cat "$RUNNER_TEMP/model-proxy.log"; exit 1
+      - name: Boss on call
+        # scripts/boss.mjs answers the agent's questions with Opus on the owner's Claude
+        # account. The token stays in this step; the agent only reaches it on localhost.
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          BOSS_MAX_QUESTIONS: ${{ vars.BOSS_MAX_QUESTIONS || '6' }}
+        run: |
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1
+          nohup node scripts/boss.mjs > "$RUNNER_TEMP/boss.log" 2>&1 &
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8788 >/dev/null && exit 0; sleep 0.5; done
+          echo "boss did not start"; cat "$RUNNER_TEMP/boss.log"
+      - id: prompt
+        env:
+          RUN: ${{ inputs.run }}
+        run: |
+          case "$RUN" in morning|evening) ;; *) [[ "$RUN" =~ ^[a-z][a-z0-9-]{1,30}$ ]] && [ -f "ops/roles/$RUN.md" ] || { echo "unknown run $RUN"; exit 1; } ;; esac
+          { echo 'text<<PROMPT_EOF'; sed -e "s/{{MINUTES}}/${AGENT_MINUTES}/g" -e "s/{{RUN}}/${RUN}/g" .github/agent/daily.md; echo 'PROMPT_EOF'; } >> "$GITHUB_OUTPUT"
+      - uses: anthropics/claude-code-action@v1
+        env:
+          # The local free-model proxy (above), which forwards to OpenRouter with the real key.
+          ANTHROPIC_BASE_URL: http://127.0.0.1:8787
+          ANTHROPIC_AUTH_TOKEN: local-proxy
+          ANTHROPIC_API_KEY: ''
+          ANTHROPIC_DEFAULT_HAIKU_MODEL: free-rotation
+          ANTHROPIC_DEFAULT_SONNET_MODEL: free-rotation
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1'
+        with:
+          anthropic_api_key: local-proxy
+          prompt: ${{ steps.prompt.outputs.text }}
+          github_token: ${{ github.token }}
+          show_full_output: true
+          claude_args: >-
+            --model free-rotation
+            --max-turns ${{ vars.AGENT_MAX_TURNS || '250' }}
+            --allowedTools "Bash(date*),Bash(npm run build),Bash(npm test),Bash(npm install *),Bash(git *),Bash(gh issue *),Bash(node scripts/ask-boss.mjs *),Read,Edit,Write,Glob,Grep"
+      - name: Commit the agent's work if tests and build pass
+        if: always()
+        run: |
+          git config user.name "{{SLUG}}-agent"
+          git config user.email "{{SLUG}}-agent@users.noreply.github.com"
+          node scripts/live.mjs phase "Checking tests and build" || true
+          if [ -n "$(git status --porcelain)" ]; then
+            if npm test && npm run build; then
+              git add -A
+              git commit -qm "Agent: daily update $(date -u +%F)" && git push -q
+              node scripts/live.mjs phase "Tests and build passed; pushed" || true
+            else
+              echo "Agent changes failed tests/build; discarded." | tee -a ops/discarded.txt
+              git checkout -- . && git clean -fdq -e ops/discarded.txt
+              node scripts/live.mjs phase "Tests or build failed; changes discarded" || true
+            fi
+          else
+            node scripts/live.mjs phase "Nothing left to commit" || true
+          fi
+          # The agent commits each finished item; push them all once so each run deploys once.
+          git push -q || true
+      - name: Daily report
+        # Once a day only; the evening run's commits show in the next morning's report.
+        if: always() && inputs.run == 'morning'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/live.mjs phase "Writing the daily report" || true
+          gh label create report --color 0E8A16 2>/dev/null || true
+          gh label create decision --color D93F0B 2>/dev/null || true
+          git pull --rebase -q || true
+          node scripts/report.mjs
+          git config user.name "{{SLUG}}-agent"
+          git config user.email "{{SLUG}}-agent@users.noreply.github.com"
+          git add ops/metrics.csv ops/.llm_usage_total 2>/dev/null || true
+          git commit -qm "Daily metrics $(date -u +%F)" -- ops/metrics.csv ops/.llm_usage_total && git push -q || true
+      - name: Close the live feed
+        if: always()
+        run: node scripts/live.mjs phase "Run finished" && node scripts/live.mjs finish

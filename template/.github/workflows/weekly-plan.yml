@@ -1,0 +1,59 @@
+name: weekly-plan
+on:
+  # Started Sunday 4am Pacific by the venture-cron Worker (subfixer repo, cron/), and once by the hq provisioner at launch, before the 6am daily run.
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+  actions: read
+  checks: write
+# Shares the daily agent's group so the two never push over each other.
+concurrency: daily-agent
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Headquarters, read-only
+        run: git clone -q https://github.com/browsertools-oss/hq.git ../hq
+      - name: Live feed for the Ventures page
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: nohup node scripts/live.mjs watch > "$RUNNER_TEMP/agent-live.log" 2>&1 &
+      - name: Labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh label create weekly-plan --color 5319E7 2>/dev/null || true
+      - name: Load the instructions
+        id: prompt
+        env:
+          MINUTES: ${{ vars.AGENT_MINUTES || '10' }}
+        run: |
+          TODAY=$(TZ=America/Los_Angeles date +%m-%d-%Y)
+          { echo 'text<<PROMPT_EOF'; sed -e "s/{{TODAY}}/${TODAY}/g" -e "s/{{MINUTES}}/${MINUTES}/g" .github/agent/weekly.md; echo 'PROMPT_EOF'; } >> "$GITHUB_OUTPUT"
+      - uses: anthropics/claude-code-action@v1
+        with:
+          # Owner's Claude subscription, from `claude setup-token`.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: ${{ steps.prompt.outputs.text }}
+          github_token: ${{ github.token }}
+          show_full_output: true
+          claude_args: >-
+            --model ${{ vars.PLANNER_MODEL || 'claude-opus-5-5' }}
+            --max-turns 200
+            --add-dir ../hq
+            --allowedTools "Bash(date*),Bash(git log*),Bash(git show*),Bash(git diff*),Bash(git status*),Bash(git add *),Bash(git commit *),Bash(git -C ../hq *),Bash(gh issue *),Bash(gh run list*),Bash(gh run view*),Bash(gh label *),Read,Edit,Write,Glob,Grep,WebSearch,WebFetch"
+      - name: Push the plan
+        if: always()
+        run: |
+          node scripts/live.mjs phase "Pushing the plan" || true
+          git config user.name "{{SLUG}}-planner"
+          git config user.email "{{SLUG}}-planner@users.noreply.github.com"
+          git pull --rebase -q || true
+          git push -q || true
+      - name: Close the live feed
+        if: always()
+        run: node scripts/live.mjs phase "Run finished" && node scripts/live.mjs finish

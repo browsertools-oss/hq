@@ -1,0 +1,1 @@
+- Read ops/brief.md and ops/week-plan.md, then start the first row.
