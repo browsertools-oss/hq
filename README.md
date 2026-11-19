@@ -1,6 +1,6 @@
 # hq
 
-Headquarters for the browsertools-oss ventures. A CEO agent (Claude Opus) runs here every night at 10pm Pacific: it reviews every venture, researches new ones, writes direction for the crews, and gives orders that `scripts/provision.mjs` carries out (launching ventures, hiring workers, tuning crews, asking the owner).
+Headquarters for the browsertools-oss ventures. A CEO agent (Claude Opus) runs here every night at 10pm Pacific, above one boss per venture and the bosses' workers: it reviews every venture, researches new ones, sets direction for the bosses, and gives orders that `scripts/provision.mjs` carries out (launching ventures, hiring workers, tuning crews, asking the owner).
 
 - `.github/agent/ceo.md`: the CEO's standing instructions.
 - `.github/workflows/nightly.yml`: the nightly session, started by the venture-cron Worker (browsertools-oss/subfixer, `cron/`).

@@ -148,6 +148,16 @@ function resume(o) {
   say(`resumed ${repo}'s crew`);
 }
 
+const replanned = new Set();
+function replan(o) {
+  const repo = repoOf(o.repo);
+  if (replanned.has(repo)) throw new Error(`${repo} was already replanned tonight`);
+  if (!fileInRepo(repo, ".github/workflows/weekly-plan.yml")) throw new Error(`${repo} has no boss (weekly-plan.yml)`);
+  run("gh", ["workflow", "run", "weekly-plan.yml", "-R", repo]);
+  replanned.add(repo);
+  say(`told ${repo}'s boss to replan the week`);
+}
+
 function setVar(o) {
   if (!VARS.includes(o.name)) throw new Error(`${o.name} is not an allowed variable`);
   const v = String(o.value);
@@ -177,7 +187,7 @@ function* walk(d) {
 let orders = [];
 try { orders = JSON.parse(fs.readFileSync(ACTIONS, "utf8") || "[]"); } catch (e) { say(`ops/actions.json is not valid JSON (${e.message}); nothing done`); }
 if (!Array.isArray(orders)) { say("ops/actions.json must be an array; nothing done"); orders = []; }
-const handlers = { launch, hire, fire, pause, resume, set_var: setVar, owner_ask: ownerAsk };
+const handlers = { launch, hire, fire, pause, resume, set_var: setVar, owner_ask: ownerAsk, replan };
 let launches = 0;
 const changed = [];
 for (const o of orders) {
