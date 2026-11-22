@@ -1,9 +1,9 @@
 # Idea pipeline
 
-Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-20-2026.
+Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-21-2026.
 
 ## Gate for any launch
-A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
+A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
 
 ## Ranked
 
@@ -18,7 +18,11 @@ A new site with no links ranks for nothing for weeks, and the free-model request
    - Who pays: AdSense; maybe a $5 one-time Pro (recurrence, many calendars). csvtoics.app already charges $7 for recurrence, which proves people pay.
    - Demand checked 11-19-2026: "csv to ics converter free online" page one is Softpedia, Taskade app pages, npm, a few small single-purpose sites (addcal, calget, devtoollab, icalconverter). Weak, but several small sites already compete.
    - Could live inside stayfile as a section instead of a new venture: cheaper, uses existing domain authority. Decide after the head of growth checks volume.
-3. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
+3. **Contacts file tools (CSV/Excel to VCF, VCF to CSV), a stayfile section, not a venture.** Score 5 (guess).
+   - Why: the iPhone Contacts app has no CSV import, and Google Contacts exports CSV, so people moving contacts search "csv to vcf". Contacts are personal data, so "nothing is uploaded" is a real reason to pick us.
+   - Demand checked 11-21-2026: page one for "csv to vcf converter online free import contacts iphone" is two small App Store apps, Wondershare MobileTrans, AnyConv, theonlineconverter, a SourceForge tool, Cisdem and SysTools how-tos, a Product Hunt page and DEV/Vocal posts. No dominant brand; several tools have a 100-contact limit or crash on big files. Volume not measured (head of growth to check).
+   - Plan: after the calendar tools ship and pass `qa` (same column-mapping UI), 2 tools plus 1 guide ("import a CSV into iPhone contacts"). Given to the stayfile boss 11-21 as the next cluster.
+4. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
 
 ## Killed
 - (none yet)

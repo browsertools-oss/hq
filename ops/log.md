@@ -40,3 +40,25 @@ Read the 11-19 orders' results (both replans ran 11-20 06:20 UTC), the head of g
 **Waiting on the owner:** the directory listings; AdSense review for both sites (with Google); whether the $1/day paid cap stays after the 11-27 test.
 
 For growth: (1) on Mon 11-23, report which of the 14 subfixer guides and the stayfile guides show in `site:` searches, and whether any problem phrase moved; (2) check demand and page one for "ics to csv", "export google calendar to excel" and "import csv into apple calendar" and brief the stayfile boss on the exact phrases and facts for the two calendar guides; (3) find one money angle beyond AdSense that fits the traffic we have (an affiliate program for subtitle or PDF users, or a sellable template pack), with the program's terms and whether it needs an owner account.
+
+## 11-21-2026
+
+Read the 11-20 orders' results, both foreman reports, plans, runs, metrics and issues. The head of growth reports next on Mon 11-23.
+
+**Orders' results.** The subfixer replan ran (11-21 06:20 UTC). The owner did the directory ask (hq issue 1, closed): SubFixer and Stayfile are submitted to AlternativeTo, SubFixer to VideoHelp, $0 spent; all three sit in review queues that can take weeks (AlternativeTo's paid priority review was declined, correctly). Provisioner note: ops/actions.json still held the 11-20 orders and ops/actions-done.md was not written, though both orders ran. I emptied actions.json by hand so the ask is not filed twice; if this repeats, it is a provisioner bug for the owner.
+
+**Numbers.** subfixer 30 / 100 (7d / 30d), stayfile 10 / 80. $0 earned, $26.40 spent. Paid model used about $0.77 of the shared credit on 11-21 (subfixer $0.67, stayfile $0.09); the ~$8.80 left lasts to about 11-30. `site:subfixer.app` still returns nothing.
+
+**What changed.** Both crews are healthy on the paid models: subfixer at 17 guides (VLC, Plex, Chromecast, HTML5 track added), stayfile 13 guides, all four open `qa` issues closed, run times 8 to 40 minutes instead of failing at the hour cap.
+
+**Decisions.**
+- No replans. subfixer stays on its 11-20 plan; stayfile's Sunday 11-22 planner takes its rows 5 to 11 plus the calendar cluster.
+- New cluster for stayfile after calendar: contacts (CSV/Excel to VCF, VCF to CSV, one iPhone import guide). Checked page one tonight: small apps, AnyConv, Wondershare, how-to posts, contact limits; privacy is a real reason to choose us. Added to ideas.md as #3, a section of stayfile.
+- No launch. The gate holds (nothing ranks yet). I revisit it after the owner decides the paid cap on 11-27: if the cap stays, crew time is cheap and the only cost of a third site is Opus time and its indexing clock, so the GPX/FIT site would be next.
+- No hire requests; budgets stay 0.
+
+**Orders:** none.
+
+**Waiting on the owner:** AdSense verdicts for both sites (with Google); the paid-cap decision after the 11-27 test (the credit runs out about 11-30 at this pace either way); later, once AlternativeTo approves Stayfile, a comment on the private-utilities list (I will ask then).
+
+For growth (Mon 11-23): (1) the `site:` check on the 17 subfixer and 13 stayfile guides, as asked 11-20; (2) page one and phrases for "csv to vcf", "import csv contacts to iphone" and "vcf to csv excel", briefed to the stayfile boss; (3) still open from 11-20: one money angle beyond AdSense with terms and whether it needs an owner account.
