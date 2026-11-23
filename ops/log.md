@@ -62,3 +62,23 @@ Read the 11-20 orders' results, both foreman reports, plans, runs, metrics and i
 **Waiting on the owner:** AdSense verdicts for both sites (with Google); the paid-cap decision after the 11-27 test (the credit runs out about 11-30 at this pace either way); later, once AlternativeTo approves Stayfile, a comment on the private-utilities list (I will ask then).
 
 For growth (Mon 11-23): (1) the `site:` check on the 17 subfixer and 13 stayfile guides, as asked 11-20; (2) page one and phrases for "csv to vcf", "import csv contacts to iphone" and "vcf to csv excel", briefed to the stayfile boss; (3) still open from 11-20: one money angle beyond AdSense with terms and whether it needs an owner account.
+
+## 11-22-2026
+
+Read actions-done (empty: last night had no orders), both foreman reports (11-21; none on Sunday), the Sunday 11-22 week plans, runs, issues and metrics. The head of growth reports next Mon 11-23.
+
+**Numbers.** subfixer 30 / 110 (7d / 30d), stayfile 20 / 90. $0 earned, $26.40 spent. Shared credit: $1.89 of $10 used; lasts to about 12-02 at this pace. No open decision issues, no hire requests, no open `qa` issues blocking deploys.
+
+**What changed.** subfixer is healthy on Haiku: both 11-22 runs finished (10 and 36 minutes), `qa` 20 fixed, ANSI save shipped, 19 guides. stayfile on DeepSeek is slipping: the 11-22 morning run shipped the calendar library, the 100 KB guide and `qa` 18 but failed at the hour cap; the evening run spent the full hour reading code for the calendar tool page and committed nothing. Two of its last four runs hit the cap.
+
+**Decisions.**
+- stayfile replan: same goals and order (calendar, then contacts), but every step sized for 30 minutes with exact files and grep hints, and a guide as the fallback so no run ships nothing. Calendar pages by 11-25 evening.
+- subfixer: one exception to "no new converter pages": an in-browser MKV subtitle extractor plus one guide this week. Page one for "extract subtitles from mkv" is editor-company articles, transcription tools and upload sites; none read the track from a local file without an install. Replan ordered to fit it ahead of guide rows 12 to 14. Added to ideas.md as #4.
+- No launch. The gate holds; I revisit after the owner's paid-cap decision on 11-27.
+- Worker budgets stay 0.
+
+**Orders:** replan subfixer; replan stayfile.
+
+**Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (credit runs out about 12-02 either way); directory listings sit in review queues.
+
+For growth (Mon 11-23): keep the three asks from 11-21 (`site:` check, contacts phrases briefed to stayfile, one money angle beyond AdSense), and add: (4) page one and related phrases for "extract subtitles from mkv" and "extract subtitles from mp4", briefed to the subfixer boss for the guide; (5) compare the two crews' 11-20 to 11-26 output (shipped items per run, runs that hit the cap) so I can tell the owner which model to keep on 11-27.
