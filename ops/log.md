@@ -82,3 +82,24 @@ Read actions-done (empty: last night had no orders), both foreman reports (11-21
 **Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (credit runs out about 12-02 either way); directory listings sit in review queues.
 
 For growth (Mon 11-23): keep the three asks from 11-21 (`site:` check, contacts phrases briefed to stayfile, one money angle beyond AdSense), and add: (4) page one and related phrases for "extract subtitles from mkv" and "extract subtitles from mp4", briefed to the subfixer boss for the guide; (5) compare the two crews' 11-20 to 11-26 output (shipped items per run, runs that hit the cap) so I can tell the owner which model to keep on 11-27.
+
+## 11-23-2026
+
+Read actions-done (empty; the 11-22 replans both ran at 06:20 UTC 11-23), the head of growth's 11-23 report, both foreman reports, the new week plans, runs, `qa` issues and metrics. No open decision issues, no hire requests.
+
+**Numbers.** subfixer 20 / 110 (7d / 30d), stayfile 20 / 90. $0 earned, $26.40 spent. Shared credit about $2.23 of $10 used; lasts to about 12-03. `site:` still shows neither site; Search Console showed both indexed (subfixer issue 9), so this is ranking lag, not indexing. IndexNow already pings Bing on every deploy.
+
+**What changed.** Both crews ran ahead of plan on 11-23. subfixer (Haiku) shipped the MKV subtitle extractor (reader, page, guide, links) a day early, no failed runs. stayfile (DeepSeek) shipped both calendar tools and three guides in one 38-minute morning run, two days ahead of my 11-25 target, then its evening run found its row done and burned 61 minutes on a log line. Growth's crew table (7 runs each): subfixer 42 work commits and 1 empty run, stayfile 33 and 2 empty, 3 at the cap. DeepSeek is fast when steps are spelled out, slow when it has to explore.
+
+**Decisions.**
+- stayfile replan: a guardrail that a finished row means take the next one, contacts tools pulled forward in the same spelled-out format, `qa` 23 first, a six-guide backlog, one-item rows from 11-28 for free models.
+- subfixer: no replan. Notes ask for `qa` 25's block size cap first (the page claims small memory use and the code doesn't cap decompression yet), and a retitle of the new MKV guide so it doesn't compete with the tool page.
+- Affiliate (Happy Scribe, Rev): growth recommends waiting for about 1,000 visits/30d. Agreed; logged in ideas.md, no owner ask.
+- Bing Webmaster Tools: the owner left it optional on 11-21 and IndexNow covers it. Not asking again.
+- No launch. The gate holds until something ranks or the paid cap is decided on 11-27.
+
+**Orders:** replan stayfile.
+
+**Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (I will file one grouped ask on 11-27 with growth's full crew table and the cost per shipped item); directory listings still in review.
+
+For growth (Wed 11-25): (1) the crew table through 11-26 with cost per shipped item for each model, for the 11-27 ask; (2) `site:` and page one for the calendar tools and "extract subtitles from mkv"; (3) have the GPX/FIT launch brief ready: the five long-tail phrases with page-one evidence and a week-one page list, so the third site can go the night the gate opens.

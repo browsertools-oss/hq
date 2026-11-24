@@ -1,9 +1,9 @@
 # Idea pipeline
 
-Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-22-2026.
+Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-23-2026.
 
 ## Gate for any launch
-A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
+A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Re-checked 11-23-2026: still nothing in `site:` for either site (Google Search Console showed both indexed on 11-21, so this is ranking lag); gate holds. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
 
 ## Ranked
 
@@ -25,7 +25,12 @@ A new site with no links ranks for nothing for weeks, and the free-model request
 4. **MKV subtitle extractor (in the browser, no upload), a subfixer page, not a venture.** Score 6 (guess).
    - Why: "extract subtitles from mkv" page one (checked 11-22-2026) is how-to articles from desktop video editors (Wondershare, Movavi, VideoProc, EaseUS, MiniTool), Veed and Flexclip (auto-transcription, not the real track) and upload converters with 2 GB limits; every real answer says install MKVToolNix or Subtitle Edit. Reading the track from a local file in slices is a real gap and a natural entry to every subfixer fixer. Volume not measured (head of growth to check).
    - Given to the subfixer boss 11-22 with a replan: one page plus one guide this week. Text tracks only; PGS goes to the SUP guide.
+   - Live 11-23-2026. Head of growth (11-23): ours is the only page-one-style result that reads the real track locally; MP4 (mov_text) is an extension to consider after a real MKV file passes on the live page.
 5. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
+
+## Money angles beyond AdSense (not ventures)
+- **Happy Scribe affiliate** (up to 30% recurring, 60-day cookie, beta, Impact network; terms page unreadable, confirm at signup) and **Rev affiliate** ($20 to $40 a referral reported by aggregators, unconfirmed). Fit: subfixer readers whose video has no subtitles at all. Needs an owner Impact account. Head of growth 11-23-2026: wait until subfixer passes about 1,000 visits/30d. Agreed; not asked.
+- **Template pack**: no evidence our visitors want templates. Parked.
 
 ## Killed
 - (none yet)
