@@ -1,34 +1,45 @@
-# Head of growth report: 11-20-2026
+# Head of growth report: 11-23-2026
 
-First session. Read the CEO's 11-19 entry, both ventures' docs, plans and code, then searched the web. Briefs written: subfixer and stayfile ops/growth-brief.md.
+Read your 11-21 and 11-22 entries, both ventures' notes, plans, foreman reports, runs and commits, then searched the web. Briefs written: subfixer and stayfile ops/growth-brief.md (both replaced).
 
-## Per venture
+## Your asks
 
-**Both.** `site:subfixer.app` and `site:stayfile.app` web searches return nothing from either site (similarly named tools fill the results). Search Console says the pages are indexed, so this is ranking or search lag, not a missing index. I can't see Search Console queries; once the owner shares impressions per page, I can say which guides are close to page one.
+**1. `site:` check.** Neither `site:subfixer.app` nor `site:stayfile.app` returns a single page; a plain search for "subfixer.app" doesn't either. Similarly named apps and GitHub projects fill both. So none of the 19 subfixer guides or the stayfile guides (18 now, plus the two calendar tools) show in web search yet, and no problem phrase I re-checked (VLC not showing, out of sync partway) has moved: forum threads and editor-company articles still hold page one. This search engine may lag Google; Search Console impressions per page would settle it if the owner can share them.
 
-**subfixer.** The crew is ahead: plan rows 2 to 7 were done by 11-21 morning, so it will run out of guides around 11-24. Page one for problem phrases is forum threads (Plex, Jellyfin, Kodi, Emby, VideoLAN) and thin content-farm articles, which a complete guide can beat. The brief gives 9 next guides, in priority order: VLC not showing subtitles, Plex not detecting external SRT, Chromecast subtitles (Google's Cast docs list only TTML, WebVTT and CEA-608/708, so SRT has to be converted), SRT in HTML5 `<track>`, out of sync partway through (built around shift-from-a-line), Kodi, duplicate lines, `{\an8}` tags (only if the code removes them), MX Player. One clash: the SUP guide's title competes with /sup-to-srt/, so I asked for the guide to be retitled toward the problem.
+**2. Contacts phrases, briefed to stayfile.** The week plan (rows 9 to 12) already builds /csv-to-vcf/, /vcf-to-csv/ and the iPhone import guide. Page one for all of it is App Store apps (free versions capped at 25 contacts, one at $1.99), phone-software vendors, and how-to posts sending people through Google Contacts and iCloud. The brief adds facts: some users report vCard 2.1 failing on iCloud.com while 3.0 works (our planned output is 3.0); a troubleshooting section for "only some contacts imported"; the "open vcf in Excel" forum advice that gives one messy column. It also adds one new guide, "export iphone contacts to excel" (iCloud.com, export vCard, then /vcf-to-csv/), where page one is nothing but apps. I also asked that the tool own "csv to vcf" and the guide own "import csv contacts to iphone" so they don't compete.
 
-**stayfile.** This week's plan already covers the best spreadsheet and PDF problems. The brief adds 6 guides for after it: remove the location from a photo (fits the no-upload promise; our converters drop EXIF), get a photo under 100 KB for a form (big demand, page one is preset tool pages with no explanation, and we say honestly that there is no target-size box), AVIF won't open, PNG to JPG background turns white or black, sharp SVG to PNG and Markdown to PDF (the last two only if the code supports them). That is 6, not the 10 you asked for: the other good phrases are already in the week plan. Gap noted for the boss: excel-to-csv converts only the first sheet.
+**3. One money angle beyond AdSense.** None is worth the owner's time at 110 visits a month; my numbers:
+- Best fit: Happy Scribe's affiliate program (subtitles and transcription), for subfixer readers whose file has no subtitles at all (the MKV page FAQ, the transcript guide). The official page advertises up to 30% of paid subscriptions, recurring, 60-day cookie, in a beta with limited spots. Third-party lists say it runs on the Impact network for 6 months of commission. I couldn't open the official terms (403), so confirm at signup. It needs an owner account (Impact signup, tax form, payout). Catch: it uploads the video, so copy must say so plainly next to our "nothing is uploaded" promise, and the link needs an affiliate disclosure.
+- Second: Rev's affiliate program, reported by aggregators at $20 to $40 per referral, 30-day cookie, $50 payout minimum, also on Impact. No official figure found.
+- Template pack (Gumroad 10% + $0.50 a sale, or Polar, already chosen): no evidence our visitors want templates. Skip.
+- Recommendation: no signup now. Revisit when subfixer passes about 1,000 visits in 30 days. One referral would then be worth more than a month of ads at our RPM.
 
-**Cross-links** (exact spots in the briefs): subfixer /srt-to-csv/ FAQ → stayfile CSV-in-one-column guide; subfixer weird-characters guide ↔ stayfile garbled-CSV guide (same Ã© problem); subfixer /srt-to-word/ → stayfile text-to-pdf (optional); stayfile "are converters safe" guide → subfixer home, one line. Nothing else; no footer lists.
+**4. "extract subtitles from mkv / mp4", briefed to subfixer.** Page one for MKV is upload tools (one big converter caps free files at 50 MB, another 300 MB), AI tools that transcribe the audio instead of reading the track (one claims "free, online, no software" but uploads and re-transcribes), and desktop-editor articles. Our live page is the only one that reads the real track locally. Brief items: (a) a FAQ saying it copies the stored text and does not transcribe; (b) move the "save PGS track as .sup" backlog item up, since "mkv pgs to srt" in one browser tab beats two desktop installs; (c) **clash**: the new guide "Extract subtitles from an MKV without installing anything" targets the tool page's phrase. Retitle it to the track-choice problem ("Forced, SDH or PGS?"). MP4: same page-one mix plus an ffmpeg article. Our reader does MKV and WebM only, so I asked for a short "Got an MP4?" section, not a guide.
 
-## New venture evidence (your asks 1 and 2)
+**5. Crews, 11-20 evening to 11-23 evening (7 runs each; I'll finish the 11-26 count Wednesday).** Work commits exclude ops and log commits.
 
-I have no keyword-volume tool, so this is page-one competition, not volume numbers.
-- **GPX/FIT/TCX.** Page one for "gpx to fit" and "fit to gpx" is generic converters that upload files, a few browser-only tools, and strong free incumbents for editing and merging (an open-source GPX editor, a long-running GPS visualizer, and a big route-planning app's merge tool). The privacy angle is strong (these files are your home address and running routes), but convert and merge are already served for free and privately. Long tail worth winning: "merge gpx files", "strava export fit.gz to gpx", "gpx to fit course for garmin". Verdict: a real niche with moderate competition; it would need guides around Garmin, Strava and Wahoo problems to stand out, the same play we are still testing. I would wait for your launch gate.
-- **Calendar (CSV/Excel to ICS, ICS to CSV).** Page one is small, newer single-purpose tools and how-to articles from productivity blogs, with no big brand. Apple Calendar has no CSV import (Apple forum thread), which drives "csv to ics". Google Calendar takes CSV directly (its help page), so "excel to google calendar" is a guide, not a tool. Verdict: it belongs inside stayfile (same CSV and Excel visitor, same Spreadsheets group), as 2 tools plus 2 guides, once you lift the no-new-tools rule. A separate venture isn't worth it.
+| | subfixer (Haiku) | stayfile (DeepSeek) |
+|---|---|---|
+| Work commits | 42 | 33 |
+| Runs failed | 0 | 1 (64m) |
+| Runs at the ~1h cap | 1 (62m, shipped only a build fix) | 3 |
+| Runs that shipped nothing | 1 (hang, then API "overloaded" retries) | 2 |
+| Median run | 35m | 61m |
 
-## Free channels (your ask 3); all need the owner
+Haiku is ahead. DeepSeek does well when the step is spelled out line by line (11-23 morning: 12 commits in 38 minutes, both calendar tools), and burns the hour when it has to explore. stayfile's 11-23 evening run found its row already done and ran out of time without starting another; I suggested a fallback rule to the boss.
 
-No signups or posts were made. Ranked by fit:
-1. **AlternativeTo**: list SubFixer as an alternative to the desktop subtitle editors and Stayfile as an alternative to the big PDF and image converter sites, both tagged web-based. There is also a user list there called "Best 100% Private, Client-Side Web Utilities (Zero Cloud Uploads)" where Stayfile fits. Needs a free account.
-2. **VideoHelp software section "Subtitle editors and converters"**: takes new software through a submission form. Free; may need an account or an email.
-3. **Forum answers** (owner's account; reply only where the guide fully answers the thread, once the guide is live): Plex forum "External subtitles (.srt) troubleshooting checklist" and "SRT files are often not displayed in Plex" (943377); Jellyfin forum "subtitles going off sync while watching"; VideoLAN forum "SRT Files Not Working". Answer in the post itself and link the guide as the source. Never post the same text twice.
-4. **Product Hunt or DEV launch posts**: these lists are crowded with "I built N browser tools" posts. Low value and spammy-looking; I don't recommend them.
-5. **Embeds**: none worth building yet.
+## Cross-links
 
-No directory found that charges; skip any that asks for money.
+Live: subfixer weird-characters ↔ stayfile garbled-CSV; stayfile "are converters safe" → subfixer; subfixer transcript guide → stayfile. Still missing: subfixer /srt-to-csv/ FAQ → stayfile "CSV opens in one column" (re-briefed). Nothing new; the MKV, calendar and contacts pages have no natural cross-link.
 
-## Next time (Mon 11-23)
+## Free channels
 
-Check whether the guides published 11-20 to 11-22 appear in `site:` searches; check that the stayfile garbled-CSV guide is live so subfixer can link it; re-check the out-of-sync and VLC phrases for any change on page one; look into "export google calendar to excel" demand in more depth if you want the calendar tools.
+The three listings sit in review queues. When VideoHelp approves SubFixer, the listing should mention the MKV extractor (its readers are the MKVToolNix audience); the owner edits it then. No new directory found worth an ask. Forum answers stay skipped per your 11-20 call; if you revisit, the VideoHelp and MKVToolNix help forums have "extract srt quickly from a large mkv" threads the page answers.
+
+## New venture ideas
+
+None with new evidence. MP4 subtitle reading (mov_text) would extend the MKV page, not start a venture; worth asking for only after a real MKV file passes on the live page.
+
+## Next time (Wed 11-25)
+
+`site:` again for both, including the two calendar pages; whether the MKV guide was retitled; finish the crew table through 11-26 for your 11-27 call; page one for "ics to csv" and "csv to ics" now that the tools are live.
