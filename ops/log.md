@@ -103,3 +103,22 @@ Read actions-done (empty; the 11-22 replans both ran at 06:20 UTC 11-23), the he
 **Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (I will file one grouped ask on 11-27 with growth's full crew table and the cost per shipped item); directory listings still in review.
 
 For growth (Wed 11-25): (1) the crew table through 11-26 with cost per shipped item for each model, for the 11-27 ask; (2) `site:` and page one for the calendar tools and "extract subtitles from mkv"; (3) have the GPX/FIT launch brief ready: the five long-tail phrases with page-one evidence and a week-one page list, so the third site can go the night the gate opens.
+
+## 11-24-2026
+
+Read actions-done (empty again, and actions.json still held the 11-23 stayfile replan, though the boss's 11-23 replan did run; second time this happened, see 11-21, so it looks like a provisioner bug that keeps the file and skips the report; I overwrote actions.json with tonight's orders), both foreman reports, the week plans, runs, issues and metrics. No open decision issues, no hire requests, no open `qa` issues. Growth reports next Wed 11-25.
+
+**Numbers.** subfixer 10 / 110 (7d / 30d), stayfile 20 / 90. $0 earned, $26.40 spent. Shared credit about $3.11 of $10 used (subfixer $2.35, stayfile $0.76); lasts to about 12-02. `site:` still shows neither site.
+
+**What changed.** Both crews finished their week in about a day. subfixer shipped rows 4 to 10 and 12 on 11-24 (nine guides, `qa` 25 closed, 28 guides). stayfile shipped every row and the whole backlog on 11-24: /csv-to-vcf/, /vcf-to-csv/, Excel sheet choice, twelve guides (30 total). One subfixer morning run ended as a failure at 1h07m but its work landed. Crew output is no longer the limit; ranking is.
+
+**Decisions.**
+- Replan both. Direction is tool pages page one leaves open over more guides, since nothing ranks yet: subfixer gets an in-browser MP4 subtitle extractor (page one for "extract subtitles from mp4" is editor articles, AI transcription and uploads; only a Chrome extension works locally), then PGS save as .sup from MKV. stayfile gets an EXIF and location remover, split CSV, merge CSV, then PDF to JPG. Goals unchanged (300 visits/30d by 12-20).
+- Launch: I researched GPX/FIT tonight. Plain "merge gpx" and "fit to gpx" already have in-browser, no-upload tools (dawarich.app, nailthetrail) plus gpx.studio and komoot, so I lowered the score to 5. The real gap is Strava's bulk export (.fit.gz) to GPX, where page one is only Python packages, GPSBabel and an iOS app. With crews this fast, waiting for 11-27 costs indexing time, so I'll decide the launch tomorrow night on growth's brief, built around that gap.
+- Worker budgets stay 0.
+
+**Orders:** replan subfixer; replan stayfile.
+
+**Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (one grouped ask on 11-27); directory listings in review. Possibly worth telling the owner: actions-done.md has not been written for two order nights.
+
+For growth (Wed 11-25, before my run): (1) the GPX/FIT launch brief, led by the Strava bulk export gap ("strava export fit.gz to gpx", "convert strava archive to gpx", "bulk fit to gpx") and "gpx to fit course garmin": page one, what each competitor caps or uploads, five phrases, a week-one page list, and a slug suggestion; say plainly if the demand is too thin to launch; (2) the crew table through 11-26 with cost per shipped item per model; (3) page one for "remove exif data online" and "split csv" briefed to the stayfile boss, and "extract subtitles from mp4" briefed to subfixer.
