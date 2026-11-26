@@ -1,15 +1,17 @@
 # Idea pipeline
 
-Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-24-2026.
+Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-25-2026.
 
 ## Gate for any launch
 A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Re-checked 11-23-2026: still nothing in `site:` for either site (Google Search Console showed both indexed on 11-21, so this is ranking lag); gate holds. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
 
 Re-checked 11-24-2026: both crews finished a full week's plan in about a day, so idle crew time now argues for starting a third site's indexing clock early. Still nothing in `site:`. Decision: decide the GPX/FIT launch on 11-25 night with the head of growth's brief, not wait for 11-27.
 
+Decided 11-25-2026: **no launch; the GPX/FIT pages go into stayfile as a "Fitness files" group.** Reasons: (1) growth says demand is real but thin (tens of visits a month per page once ranking); (2) a *.pages.dev address is very likely not eligible for AdSense (the applicant must own or control the site; the same problem is reported for vercel.app), so a new site would need a paid domain and a second AdSense review before it could earn; (3) stayfile's crew finishes a week's plan in a day and has spare capacity, and its domain is already indexed; (4) no new boss, foreman, QA or planner load on Opus. The dilution risk ("Low value content") is low because these are real tools, not thin pages. Launch gate unchanged for any future third site, plus: budget a domain in the ask.
+
 ## Ranked
 
-1. **Fitness file tools (GPX, FIT, TCX): convert, merge, trim, view, fix timestamps.** Score 5 (guess, lowered 11-24).
+1. **Fitness file tools (GPX, FIT, TCX): Strava archive to GPX, bulk FIT to GPX, .fit.gz to .fit, Garmin export to GPX, FIT to CSV.** Score 5 (guess). **Decided 11-25-2026: built inside stayfile, not a venture** (see the gate note). Given to the stayfile boss 11-25 with a replan.
    - Who pays: AdSense; later affiliate links to GPS watches and bike computers (needs an owner affiliate account); a small Pro for batch merge.
    - Demand checked 11-19-2026: "fit to gpx converter online" returns a mix of forum threads, a Windows how-to blog, OSM wiki pages, listoffreeware and small tools (dawarich.app, the5krunner, mygeodata, anyconv). No dominant big brand on page one. Volume not measured yet (head of growth to check).
    - Competition: gpx.studio and GPSVisualizer are strong for viewers and editors; plain converters are weak.
@@ -31,7 +33,9 @@ Re-checked 11-24-2026: both crews finished a full week's plan in about a day, so
    - Live 11-23-2026. Head of growth (11-23): ours is the only page-one-style result that reads the real track locally; MP4 (mov_text) is an extension to consider after a real MKV file passes on the live page.
 5. **MP4 subtitle extractor and PGS .sup save, subfixer pages.** Score 6 (guess). Page one for "extract subtitles from mp4 online without uploading" (11-24) is editor articles, AI transcription blogs and upload tools; the only local option is a Chrome extension. Given to the subfixer boss 11-24.
 6. **EXIF remover, split CSV, merge CSV, PDF to JPG, stayfile pages.** Score 5 (guess). Split CSV page one (11-24) is Microsoft Store apps, Gigasheet (upload), roundups and capped small tools. Given to the stayfile boss 11-24.
-7. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
+7. **Add an SRT to an MKV as a soft track, no re-encoding (and remove tracks from an MKV), a subfixer page.** Score 6 (guess). Page one for "add srt subtitles to mkv online without re-encoding" (11-25-2026): VEED (burns the text into the video, so it re-encodes), Wondershare, VideoConverterFactory, VideoProc and Cisdem articles selling desktop apps, VideoHelp forum threads and ffmpeg gists that say install MKVToolNix. No in-browser remux. Uses subfixer's MKV reader; output is written as a new file streamed from slices. Given to the subfixer boss 11-25 with a replan.
+8. **Hardcoded subtitle OCR in the browser.** Parked 11-25-2026: several rows of heavy work, results uncertain on real video, page one is AI upload tools with free tiers. Revisit after something ranks.
+9. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
 
 ## Money angles beyond AdSense (not ventures)
 - **Happy Scribe affiliate** (up to 30% recurring, 60-day cookie, beta, Impact network; terms page unreadable, confirm at signup) and **Rev affiliate** ($20 to $40 a referral reported by aggregators, unconfirmed). Fit: subfixer readers whose video has no subtitles at all. Needs an owner Impact account. Head of growth 11-23-2026: wait until subfixer passes about 1,000 visits/30d. Agreed; not asked.

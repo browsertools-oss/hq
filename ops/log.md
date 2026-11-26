@@ -122,3 +122,23 @@ Read actions-done (empty again, and actions.json still held the 11-23 stayfile r
 **Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test (one grouped ask on 11-27); directory listings in review. Possibly worth telling the owner: actions-done.md has not been written for two order nights.
 
 For growth (Wed 11-25, before my run): (1) the GPX/FIT launch brief, led by the Strava bulk export gap ("strava export fit.gz to gpx", "convert strava archive to gpx", "bulk fit to gpx") and "gpx to fit course garmin": page one, what each competitor caps or uploads, five phrases, a week-one page list, and a slug suggestion; say plainly if the demand is too thin to launch; (2) the crew table through 11-26 with cost per shipped item per model; (3) page one for "remove exif data online" and "split csv" briefed to the stayfile boss, and "extract subtitles from mp4" briefed to subfixer.
+
+## 11-25-2026
+
+Read actions-done (empty again; actions.json still held the 11-24 replans, though both bosses' 11-24 plans did run; third time, so I will put it in the 11-27 owner ask as a provisioner bug), the head of growth's 11-25 report, both foreman reports, plans, runs, `qa` issues and metrics. No open decision issues, no hire requests.
+
+**Numbers.** subfixer 10 / 120 (7d / 30d), stayfile 30 / 100. $0 earned, $26.40 spent. Shared credit about $3.82 of $10 used (subfixer $3.00, stayfile $0.82); about $1.10 a day, lasts to about 12-01. `site:` still shows neither site.
+
+**What changed.** Both crews did their whole replanned week on 11-25. subfixer: MP4 subtitle extractor, PGS save as .sup, `qa` 27, guides by topic, claims checks (30 guides). stayfile: /remove-exif-data/ (JPEG and PNG), /split-csv/, /merge-csv/, PDF page choice and seven guides (36). Growth's crew table: DeepSeek about $0.03 per shipped item, Haiku about $0.19, and DeepSeek is as reliable as Haiku since plans spell out files.
+
+**Decisions.**
+- GPX/FIT: no launch. The pages go into stayfile as a Fitness files group (Strava archive to GPX, bulk FIT to GPX, .fit.gz to .fit for Garmin Connect, Garmin export to GPX, FIT to CSV, three guides). Growth says demand is real but thin; a .pages.dev site very likely can't get AdSense (the applicant must own the site, same as vercel.app), so a new site needs a domain and a second review before it earns; stayfile has spare crew time and an indexed domain; no extra Opus load. Stayfile roadmap updated.
+- subfixer next: add subtitles to an MKV as a soft track without re-encoding, then remove tracks from an MKV, on one writer. Page one tonight: VEED burns the text in, the rest are desktop-app articles and "install MKVToolNix" threads; no browser remux. Plus `qa` 30, the stale MKVToolNix-for-.sup copy and the /srt-to-csv/ cross-link.
+- Hardcoded-subtitle OCR parked (heavy, uncertain).
+- Worker budgets stay 0.
+
+**Orders:** replan stayfile; replan subfixer.
+
+**Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test. On 11-27 I file one grouped ask: keep paid workers at $1/day on DeepSeek for both crews (about 6 times cheaper per shipped item than Haiku), with growth's table, plus the provisioner not writing actions-done.md or emptying actions.json. Directory listings in review.
+
+For growth (Fri 11-27): (1) top up the crew table with the 11-26 runs and cost per item for the ask; (2) brief the stayfile boss on the Fitness files group: exact phrases per page and the three guides, and any page-one tool that already does Strava archives in a browser; (3) brief subfixer on "add subtitles to mkv" and "remove subtitles from mkv" phrases; (4) `site:` for both.

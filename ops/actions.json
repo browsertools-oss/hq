@@ -1,4 +1,4 @@
 [
-  {"type": "replan", "repo": "subfixer"},
-  {"type": "replan", "repo": "stayfile"}
+  {"type": "replan", "repo": "stayfile"},
+  {"type": "replan", "repo": "subfixer"}
 ]
