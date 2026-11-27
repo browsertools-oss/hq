@@ -1,6 +1,6 @@
 # Idea pipeline
 
-Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-25-2026.
+Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-26-2026.
 
 ## Gate for any launch
 A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Re-checked 11-23-2026: still nothing in `site:` for either site (Google Search Console showed both indexed on 11-21, so this is ranking lag); gate holds. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
@@ -37,9 +37,13 @@ Decided 11-25-2026: **no launch; the GPX/FIT pages go into stayfile as a "Fitnes
 8. **Hardcoded subtitle OCR in the browser.** Parked 11-25-2026: several rows of heavy work, results uncertain on real video, page one is AI upload tools with free tiers. Revisit after something ranks.
 9. **Subtitle and file guides for specific players and editors** (Plex, Jellyfin, Kodi, Premiere, DaVinci). Not a venture: given to the subfixer boss as direction on 11-19-2026.
 
+10. **MKV to MP4 without re-encoding, keeping subtitles (in the browser), a subfixer page.** Score 7 (guess). Page one for "convert mkv to mp4 with subtitles without re-encoding online" (11-26-2026): upload converters with caps (FreeConvert 1 GB, Zamzar 50 MB free, Convertio, CloudConvert), DivX and Movavi desktop apps, TechRadar and Digital Trends how-tos, VideoHelp threads saying use ffmpeg `-codec copy`. No browser remux. Far wider phrase family than our other long-tail pages ("mkv to mp4" is a head term we won't win, but the "without re-encoding", "keep subtitles" and "large file" tails are open). Reuses the MKV reader and MP4 box knowledge. Given to the subfixer boss 11-26 with a replan.
+11. **WhatsApp chat export to Excel/CSV and PDF (in the browser), a stayfile group.** Score 6 (guess). Page one for "export whatsapp chat to pdf or excel" (11-26-2026): Chrome extensions (free tier capped at 100 messages, Excel behind Pro), App Store apps, Wondershare and EaseUS articles, a vendor charging about $7 a chat, upload converters, a Python script for CSV. No in-browser reader of the export. Chats are very private, so the no-upload angle is strong, and the paid vendor proves willingness to pay (a Pro candidate for long chats with media). Given to the stayfile boss 11-26 with a replan.
+12. **Google Timeline JSON to GPX/KML.** Killed 11-26-2026 before building: dawarich.app already converts every Timeline variant in the browser, and Google's 2025 export change makes the file hard to get.
+
 ## Money angles beyond AdSense (not ventures)
 - **Happy Scribe affiliate** (up to 30% recurring, 60-day cookie, beta, Impact network; terms page unreadable, confirm at signup) and **Rev affiliate** ($20 to $40 a referral reported by aggregators, unconfirmed). Fit: subfixer readers whose video has no subtitles at all. Needs an owner Impact account. Head of growth 11-23-2026: wait until subfixer passes about 1,000 visits/30d. Agreed; not asked.
 - **Template pack**: no evidence our visitors want templates. Parked.
 
 ## Killed
-- (none yet)
+- Google Timeline JSON to GPX/KML (11-26-2026): served in the browser by dawarich.app; export got harder in 2025.

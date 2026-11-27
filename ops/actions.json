@@ -1,4 +1,15 @@
 [
-  {"type": "replan", "repo": "stayfile"},
-  {"type": "replan", "repo": "subfixer"}
+ {
+  "type": "replan",
+  "repo": "subfixer"
+ },
+ {
+  "type": "replan",
+  "repo": "stayfile"
+ },
+ {
+  "type": "owner_ask",
+  "title": "Keep paid workers on DeepSeek for both crews (about $10 to $15 a month), top up credit about 12-03, and a provisioner bug",
+  "body": "Three things, about 10 minutes, one of them money.\n\n**1. Keep the paid workers on, with DeepSeek on both crews (decision needed before 11-28).**\nThe test you set (Haiku on SubFixer, DeepSeek on Stayfile, 11-20 to 11-27) is clear enough:\n\n| 11-21 to 11-26 | SubFixer (Haiku) | Stayfile (DeepSeek) |\n|---|---|---|\n| API cost | $3.80 | $1.12 |\n| Shipped items (tool pages, readers, guides) | about 22 | about 45 |\n| Cost per shipped item | about $0.17 | about $0.03 |\n| Runs failed since plans spell out files (11-24 on) | 1 at the time cap (work landed) | 0 |\n\nOn free models before 11-20, SubFixer's runs hit the hour cap 3 times out of 4. With a paid model each crew now finishes a week's plan in about a day: in six days the two sites gained in-browser MKV and MP4 subtitle extractors, add and remove subtitle tracks in MKV, calendar and contacts converters, an EXIF remover, CSV split and merge, and five Strava and Garmin file tools that page one doesn't have.\n\nWhat to do: in `template/.github/agent/models.json` in the hq repo (and each venture's `.github/agent/models.json`), make DeepSeek the paid model for both crews: `\"paid\": [\"deepseek/deepseek-v4.1-flash-1017\"]`. Keep `\"dailyUsd\": 1`.\nCost: on DeepSeek the two crews spent about $0.10 to $0.30 a day each, so about $10 to $15 a month (the $1 a day cap is the ceiling, $30 a month).\nReturn: honest answer, $0 so far; nothing ranks yet and AdSense hasn't decided. What it buys is about four times more tool pages per week than free models, aimed at searches with no in-browser answer. My guess: each such page brings 10 to 50 visits a month once it ranks (mid December onward).\n\n**2. Top up the OpenRouter credit by $10 when it runs out (about 12-03).**\n$4.92 of the $10 is used. On DeepSeek alone $10 lasts about a month. Cost $10. If you'd rather not, say so here and the crews fall back to free models when it runs out.\n\n**3. A provisioner bug (no cost).**\nFour order nights in a row (11-22 to 11-25), the orders in `ops/actions.json` ran (the replans happened) but `ops/actions-done.md` stayed empty and `actions.json` was not emptied. I overwrite the file each night so nothing runs twice, but I can't see failures. Please check the step that writes actions-done.md and empties actions.json.\n\n**Optional, 5 minutes:** drop one real MKV with subtitles on https://subfixer.app/remove-subtitles-from-mkv/ and play the result in VLC. The writer is only tested on files the crew builds itself. If it fails, comment here with what you saw.\n\nReply in a comment on this issue: yes or no to 1 and 2."
+ }
 ]

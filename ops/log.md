@@ -142,3 +142,24 @@ Read actions-done (empty again; actions.json still held the 11-24 replans, thoug
 **Waiting on the owner:** AdSense verdicts (with Google); the paid-cap decision after the 11-27 test. On 11-27 I file one grouped ask: keep paid workers at $1/day on DeepSeek for both crews (about 6 times cheaper per shipped item than Haiku), with growth's table, plus the provisioner not writing actions-done.md or emptying actions.json. Directory listings in review.
 
 For growth (Fri 11-27): (1) top up the crew table with the 11-26 runs and cost per item for the ask; (2) brief the stayfile boss on the Fitness files group: exact phrases per page and the three guides, and any page-one tool that already does Strava archives in a browser; (3) brief subfixer on "add subtitles to mkv" and "remove subtitles from mkv" phrases; (4) `site:` for both.
+
+## 11-26-2026
+
+Read actions-done (empty again; actions.json still held the 11-25 replans, which did run at 06:21 UTC 11-26, so a fourth night of the same provisioner bug), both foreman reports, the week plans, runs, issues and metrics. Growth reports next Fri 11-27. No open decision issues, no hire requests, no `qa` issue blocking a deploy.
+
+**Numbers.** subfixer 0 / 120 (7d / 30d, rounded to tens), stayfile 20 / 100. $0 earned, $26.40 spent. Shared credit about $4.92 of $10 used (subfixer $3.80, stayfile $1.12); about $0.76 a day, lasts to about 12-03.
+
+**What changed.** Both crews did their whole replanned week on 11-26 again, no failed runs (31 to 40 minutes). subfixer: `qa` 30 items, in-browser .sup route ahead of MKVToolNix, the /srt-to-csv/ stayfile link, the MKV writer, /add-subtitles-to-mkv/ and /remove-subtitles-from-mkv/ with default track choice, two guides. stayfile: `qa` 29, FIT, zip and archive readers, five fitness tool pages, home routing for FIT drops, five guides.
+
+**Decisions.**
+- subfixer next: MKV to MP4 without re-encoding, keeping text subtitles as mov_text (`/mkv-to-mp4/`). Page one tonight is capped upload converters, desktop apps and "use ffmpeg" threads; no browser remux. Widest phrase family our code can reach. Allowed a test-only devDependency parser to cross-check the writers, since no real files are available.
+- stayfile next: a chat exports group, WhatsApp export to Excel/CSV and to PDF, plus two guides. Page one is extensions with caps or paywalls, apps, a $7-a-chat vendor and upload converters.
+- Killed Google Timeline to GPX: dawarich.app already does it in the browser.
+- Paid model: the data is in, so I filed the ask tonight instead of 11-27, to give the owner a day before the test ends: keep $1/day, DeepSeek on both crews (about $0.03 per shipped item against $0.17 for Haiku), top up $10 credit about 12-03, and the provisioner bug. Rows from 11-28 sized for free models until answered.
+- No launch, worker budgets stay 0.
+
+**Orders:** replan subfixer; replan stayfile; owner_ask (paid model, credit, provisioner bug, optional real MKV check).
+
+**Waiting on the owner:** that ask; AdSense verdicts (with Google); directory listings in review.
+
+For growth (Fri 11-27): (1) the crew table is no longer needed for the ask; instead `site:` for both and any Search Console signal; (2) brief subfixer on the MKV to MP4 phrase tails ("mkv to mp4 without re-encoding", "keep subtitles", "large mkv to mp4", "mkv won't play on tv/iphone"); (3) brief stayfile on the WhatsApp phrases (to Excel, to PDF, as evidence, how to export on iPhone and Android) and what each page-one tool caps; (4) one more stayfile group idea with an open in-browser gap, checked on page one.

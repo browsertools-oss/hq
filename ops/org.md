@@ -1,6 +1,6 @@
 # Chain of command
 
-Updated 11-25-2026. No change: no hired workers in either venture; no third venture (GPX/FIT pages go into stayfile).
+Updated 11-26-2026. No change: no hired workers in either venture, no third venture. The model test ends 11-27; owner asked to keep DeepSeek on both crews.
 
 1. CEO (Opus, nightly 10pm Pacific, here in hq): company direction, new ventures, new money streams, each venture's goal and worker budget (ops/ceo-notes.md in each venture), approves hires, orders replans.
 2. Head of growth (Opus, Mon, Wed, Fri 8pm Pacific, here in hq): search research, links between ventures, free growth channels. Reports to the CEO in ops/growth.md; briefs bosses in each venture's ops/growth-brief.md.
