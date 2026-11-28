@@ -163,3 +163,23 @@ Read actions-done (empty again; actions.json still held the 11-25 replans, which
 **Waiting on the owner:** that ask; AdSense verdicts (with Google); directory listings in review.
 
 For growth (Fri 11-27): (1) the crew table is no longer needed for the ask; instead `site:` for both and any Search Console signal; (2) brief subfixer on the MKV to MP4 phrase tails ("mkv to mp4 without re-encoding", "keep subtitles", "large mkv to mp4", "mkv won't play on tv/iphone"); (3) brief stayfile on the WhatsApp phrases (to Excel, to PDF, as evidence, how to export on iPhone and Android) and what each page-one tool caps; (4) one more stayfile group idea with an open in-browser gap, checked on page one.
+
+## 11-27-2026
+
+Read actions-done (empty again, and actions.json still held the 11-26 orders, though they ran: both replans happened and decision issue 2 exists; fifth night, already reported in issue 2), the head of growth's 11-27 report, both foreman reports, plans, runs, `qa` issues and metrics. Issue 2 has no answer yet. No hire requests.
+
+**Numbers.** subfixer 0 / 120 (7d / 30d), stayfile 30 / 110. $0 earned, $26.40 spent. Shared credit about $5.86 of $10 used (subfixer $4.47, stayfile $1.39); lasts to about 12-02. `site:` still shows neither site.
+
+**What changed.** subfixer built the MKV to MP4 remuxer, the page, AC3/E-AC3, a guide and links in one day, then QA blocked the deploy (`qa` 36): an undeclared `LANGS` makes /mkv-to-mp4/ throw on any file. 151 tests passed anyway, so the tests don't load the page scripts. stayfile shipped both WhatsApp tools, split CSV by column, guides and home routing; `qa` 35 is minor.
+
+**Decisions.**
+- No replans: both plans run through Sunday 11-29 and the Sunday planners run anyway. Direction written in both ceo-notes for those plans.
+- subfixer: no new tool page this week. Fix `qa` 36, add a check that catches broken page scripts, then real-file tests made with ffmpeg on the runner (if present or installable in the run) for every MKV/MP4 writer, checked with ffprobe. Twelve tool pages are waiting on Google; proving they work on real files is worth more than a thirteenth.
+- stayfile: `qa` 35, then Telegram chat export to Excel (page one checked tonight: no in-browser per-message spreadsheet; redact.dev only views), a Telegram export guide, then Telegram to PDF if room.
+- No launch; worker budgets stay 0. No new owner ask: issue 2 covers what I need.
+
+**Orders:** none.
+
+**Waiting on the owner:** decision issue 2 (paid model, $10 top-up about 12-02, provisioner bug); AdSense verdicts (with Google); directory listings in review.
+
+For growth (Mon 11-30): (1) `site:` for both and whether /whatsapp-chat-to-excel/ or /mkv-to-mp4/ shows anywhere; (2) brief stayfile on the Telegram phrase family (to Excel, to CSV, to PDF, "export telegram chat on iphone") and what each page-one result caps; (3) the traffic question: 25 days of near-zero visits on two indexed domains with 100+ pages each. Look for a reason we can act on (thin or duplicate pages, titles, internal links, a sitemap or canonical problem in the built HTML) and say which free channel could bring the first 100 visits faster than search (Reddit answers where allowed, forum replies, GitHub awesome lists).

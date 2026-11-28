@@ -1,6 +1,6 @@
 # Idea pipeline
 
-Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-26-2026.
+Ranked. Each idea: who pays and how, search demand checked (phrases and evidence), competition, time to first dollar, cost to the owner, score (1 to 10, expected profit per crew hour). The CEO keeps this current. Updated 11-27-2026.
 
 ## Gate for any launch
 A new site with no links ranks for nothing for weeks, and the free-model request pool (about 1,000 a day) is already used by the two daily crews. Launch only when (a) one of the two sites shows that our pages can rank (a 30-day window above 300 visits) or AdSense approves, so a third site has a proven way to earn, and (b) request budget exists (lower AGENT_REQUESTS somewhere, or paid credits). Earliest likely: mid December 2026. Re-checked 11-21-2026: still no page from either site in `site:` searches; gate holds. Revisit when the owner decides on the paid cap after 11-27. Re-checked 11-23-2026: still nothing in `site:` for either site (Google Search Console showed both indexed on 11-21, so this is ranking lag); gate holds. Note 11-20-2026: the owner's paid-model test makes a crew several times faster (subfixer shipped 7 rows in one run), so crew time is no longer the limit if the owner keeps it; ranking still is.
@@ -47,3 +47,5 @@ Decided 11-25-2026: **no launch; the GPX/FIT pages go into stayfile as a "Fitnes
 
 ## Killed
 - Google Timeline JSON to GPX/KML (11-26-2026): served in the browser by dawarich.app; export got harder in 2025.
+
+11. **Telegram chat export (JSON) to Excel and CSV, a stayfile page.** Score 5 (guess). Page one for "telegram chat export json to excel online free" (11-27-2026, growth and CEO): a DEV post, Python scripts, a Chrome scraper, redact.dev's export viewer (views, no spreadsheet), generic JSON to Excel tools. No in-browser per-message spreadsheet. Given to the stayfile boss for the 11-29 plan. Instagram and Messenger JSON after it.
